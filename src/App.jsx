@@ -1,24 +1,29 @@
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
-import Jobs from "./components/Jobs";
+import { lazy, Suspense } from "react";
+
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
-import Contact from "./components/Contact";
+
+const Home = lazy(() => import("./components/Home"));
+const Jobs = lazy(() => import("./components/Jobs"));
+const About = lazy(() => import("./components/About"));
+const Contact = lazy(() => import("./components/Contact"));
 
 function App() {
   return (
     <div className="d-flex flex-column min-vh-100">
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/jobs" element={<Jobs />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
+        <Suspense fallback={<div className="text-center mt-5">Loading...</div>}>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/jobs" element={<Jobs />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+          <Footer />
+        </Suspense>
       </Router>
     </div>
   );
