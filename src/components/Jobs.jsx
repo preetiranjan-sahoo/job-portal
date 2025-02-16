@@ -1,22 +1,130 @@
+// import { useState } from "react";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import jobListings from "./Joblistings";
+
+// function Jobs() {
+//   const [filter, setFilter] = useState("All");
+//   const [currentPage, setCurrentPage] = useState(1);
+//   const jobsPerPage = 10;
+
+//   const filteredJobs =
+//     filter === "All"
+//       ? jobListings
+//       : jobListings.filter((job) => job.type === filter);
+
+//   const indexOfLastJob = currentPage * jobsPerPage;
+//   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+//   const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
+
+//   const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
+
+//   const handleNext = () => {
+//     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+//   };
+
+//   const handlePrev = () => {
+//     if (currentPage > 1) setCurrentPage(currentPage - 1);
+//   };
+
+//   return (
+//     <div className="container mt-5">
+//       <h2 className="text-center text-primary mb-4">Available Job Listings</h2>
+
+//       <div className="d-flex justify-content-end mb-3">
+//         <select
+//           className="form-select w-auto"
+//           onChange={(e) => {
+//             setFilter(e.target.value);
+//             setCurrentPage(1);
+//           }}
+//         >
+//           <option value="All">All</option>
+//           <option value="Fresher">Fresher</option>
+//           <option value="Experienced">Experienced</option>
+//           <option value="Internship">Internship</option>
+//         </select>
+//       </div>
+
+//       <div className="row">
+//         {currentJobs.length > 0 ? (
+//           currentJobs.map((job) => (
+//             <div key={job.id} className="col-md-6 mb-4">
+//               <div className="card shadow-sm p-3">
+//                 <h5 className="text-dark">{job.title}</h5>
+//                 <p className="text-muted">
+//                   <strong>{job.company}</strong> - {job.location} <br />{" "}
+//                   {job.type}
+//                 </p>
+//                 <p className="text-success fw-bold">{job.salary}</p>
+//                 <a
+//                   href={job.applyLink}
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className="btn btn-primary"
+//                 >
+//                   Apply Now
+//                 </a>
+//               </div>
+//             </div>
+//           ))
+//         ) : (
+//           <p className="text-center text-danger">No jobs available.</p>
+//         )}
+//       </div>
+
+//       <div className="d-flex justify-content-between mt-4">
+//         <button
+//           className="btn btn-outline-primary"
+//           onClick={handlePrev}
+//           disabled={currentPage === 1}
+//         >
+//           Previous
+//         </button>
+//         <span className="fw-bold text-dark">
+//           Page {currentPage} of {totalPages}
+//         </span>
+//         <button
+//           className="btn btn-outline-primary"
+//           onClick={handleNext}
+//           disabled={currentPage === totalPages}
+//         >
+//           Next
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Jobs;
+
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import jobListings from "./Joblistings";
 
 function Jobs() {
   const [filter, setFilter] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const jobsPerPage = 10;
 
+  //idhar job filter hai type ke hisab se
   const filteredJobs =
     filter === "All"
       ? jobListings
       : jobListings.filter((job) => job.type === filter);
 
+  // Searching jobs based on title, company, or location
+  const searchedJobs = filteredJobs.filter((job) =>
+    `${job.title} ${job.company} ${job.location}`
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase())
+  );
+
+  // job page ka next or preview wala logic idhar hai
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
-  const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
-
-  const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
+  const currentJobs = searchedJobs.slice(indexOfFirstJob, indexOfLastJob);
+  const totalPages = Math.ceil(searchedJobs.length / jobsPerPage);
 
   const handleNext = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
@@ -30,7 +138,18 @@ function Jobs() {
     <div className="container mt-5">
       <h2 className="text-center text-primary mb-4">Available Job Listings</h2>
 
-      <div className="d-flex justify-content-end mb-3">
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <input
+          type="text"
+          className="form-control w-50"
+          placeholder="Search jobs..."
+          value={searchQuery}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+            setCurrentPage(1);
+          }}
+        />
+
         <select
           className="form-select w-auto"
           onChange={(e) => {
@@ -68,7 +187,7 @@ function Jobs() {
             </div>
           ))
         ) : (
-          <p className="text-center text-danger">No jobs available.</p>
+          <p className="text-center text-danger">No jobs found.</p>
         )}
       </div>
 
