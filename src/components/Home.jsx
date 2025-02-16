@@ -94,7 +94,7 @@ function Home() {
       <h1 className="text-primary">Welcome to the Job Portal</h1>
       <p className="text-muted">Find your dream job easily</p>
       <button className="btn btn-primary">
-        <Link to="/jobs" style={{ textDecoration: "none", color: "white" }}>
+        <Link to="/jobs" className="btn btn-primary text-white">
           Explore Jobs
         </Link>
       </button>
@@ -106,8 +106,7 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
         >
-          We help <motion.span animate={{ count }}>{count}</motion.span>+
-          students get their dream job
+          We help <span>{count}</span>+ students get their dream job
         </motion.h2>
       </div>
 
@@ -148,10 +147,7 @@ function Home() {
               real-time updates, we ensure a seamless job-hunting experience.
             </p>
             <button className="btn btn-primary">
-              <Link
-                to="/about"
-                style={{ textDecoration: "none", color: "white" }}
-              >
+              <Link to="/about" className="btn btn-primary text-white">
                 Know more
               </Link>
             </button>
