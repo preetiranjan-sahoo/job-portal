@@ -8,16 +8,34 @@ const jobListings = [
     salary: "Not Disclosed",
     applyLink:
       "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4149698308",
+    description:
+      "Exciting opportunity for a Frontend Developer at WebBuddy. Join our team and build amazing web applications!",
+    requirements: [
+      "Strong knowledge of JavaScript, HTML, and CSS.",
+      "Experience with React.js and state management tools like Redux.",
+      "Familiarity with REST APIs and asynchronous programming.",
+      "Basic knowledge of image authoring tools like Photoshop or Figma.",
+      "Understanding of cross-browser compatibility issues and solutions.",
+    ],
   },
   {
     id: 2,
     title: "React Developer",
     company: "Persistent Systems",
     type: "Experienced",
-    location: "Banglore, India",
+    location: "Bangalore, India",
     salary: "Not Disclosed",
     applyLink:
       "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4051638673",
+    description:
+      "Join Persistent Systems as a React Developer and work on scalable web applications.",
+    requirements: [
+      "2+ years of experience with React.js.",
+      "Experience with component-based architecture and hooks.",
+      "Familiarity with build tools like Webpack and Babel.",
+      "Knowledge of testing frameworks like Jest or Mocha.",
+      "Ability to optimize web performance and accessibility.",
+    ],
   },
   {
     id: 3,
@@ -28,6 +46,15 @@ const jobListings = [
     salary: "Not Disclosed",
     applyLink:
       "https://careers.thescalers.com/positions/senior-backend-engineer-527",
+    description:
+      "Seeking a Senior Java Backend Engineer to develop high-performance applications.",
+    requirements: [
+      "5+ years of backend development experience.",
+      "Strong expertise in Java, Spring Boot, and Hibernate.",
+      "Experience in building scalable microservices.",
+      "Proficiency with SQL and NoSQL databases.",
+      "Familiarity with cloud platforms like AWS or Azure.",
+    ],
   },
   {
     id: 4,
@@ -37,36 +64,69 @@ const jobListings = [
     location: "Bengaluru, Hyderabad, Chennai",
     salary: "₹3-5 LPA",
     applyLink:
-      "https://www.naukri.com/job-listings-software-engineer-vibry-business-solutions-hyderabad-chennai-bengaluru-0-to-0-years-110225012069?src=drecomm_apply&sid=17397073290373477&xp=2&px=1",
+      "https://www.naukri.com/job-listings-software-engineer-vibry-business-solutions",
+    description:
+      "Hiring fresher Software Engineers to work on innovative projects.",
+    requirements: [
+      "Knowledge of Java, Python, or C++.",
+      "Basic understanding of data structures and algorithms.",
+      "Familiarity with web development frameworks.",
+      "Ability to write clean and maintainable code.",
+      "Strong problem-solving skills.",
+    ],
   },
   {
     id: 5,
     title: "Associate Trainee",
     company: "American Chase",
     type: "Fresher",
-    location: "WINWAY WORLD OFFICES, Vijay Nagar, Indore, M.P.",
+    location: "Indore, M.P.",
     salary: "₹3.21 LPA",
     applyLink: "https://americanchase.keka.com/careers/jobdetails/57597",
+    description: "Looking for fresh graduates for an Associate Trainee role.",
+    requirements: [
+      "Basic programming knowledge.",
+      "Strong analytical and logical reasoning.",
+      "Good communication skills.",
+      "Willingness to learn and adapt.",
+      "Understanding of software development lifecycle.",
+    ],
   },
   {
     id: 6,
     title: "Analytics Solutions Manager",
     company: "JPMorgan Chase & Co.",
     type: "Experienced",
-    location: "Columbus, OH, United States",
-    salary: "$123,500.00-$205,000.00 /yr",
-    applyLink:
-      "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions/preview/210574962",
+    location: "Columbus, OH, USA",
+    salary: "$123,500 - $205,000 /yr",
+    applyLink: "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience",
+    description:
+      "Seeking an Analytics Solutions Manager to drive data-driven decisions.",
+    requirements: [
+      "5+ years of experience in analytics and data science.",
+      "Strong experience with SQL, Python, or R.",
+      "Familiarity with cloud-based data platforms.",
+      "Ability to create and implement machine learning models.",
+      "Strong problem-solving and communication skills.",
+    ],
   },
   {
     id: 7,
-    title: "Software Engineer III - Java Full Stack , AWS Developer",
+    title: "Software Engineer III - Java Full Stack",
     company: "JPMorgan Chase & Co.",
     type: "Experienced",
-    location: "Bengaluru, Karnataka, India",
+    location: "Bengaluru, India",
     salary: "Not Disclosed",
-    applyLink:
-      "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions/preview/210596631/?location=Bengaluru%2C+Karnataka%2C+India&locationId=300000081145775&locationLevel=city&mode=location&radius=25&radiusUnit=MI",
+    applyLink: "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience",
+    description:
+      "Seeking a Full Stack Engineer to build scalable applications.",
+    requirements: [
+      "Experience with Java, Spring Boot, and Hibernate.",
+      "Knowledge of frontend frameworks like React or Angular.",
+      "Experience in CI/CD pipelines and DevOps practices.",
+      "Understanding of cloud computing and APIs.",
+      "Excellent debugging and problem-solving skills.",
+    ],
   },
   {
     id: 8,
@@ -76,6 +136,15 @@ const jobListings = [
     location: "Chennai, India",
     salary: "₹15,000 /month",
     applyLink: "",
+    description:
+      "Google is looking for an HR Intern to assist in recruitment and operations.",
+    requirements: [
+      "Pursuing or completed MBA in HR.",
+      "Good interpersonal and communication skills.",
+      "Basic knowledge of recruitment and employee engagement.",
+      "Proficiency in Microsoft Office tools.",
+      "Strong analytical and problem-solving skills.",
+    ],
   },
   {
     id: 9,
@@ -85,6 +154,15 @@ const jobListings = [
     location: "Bangalore, India",
     salary: "₹16,00,000 /yr",
     applyLink: "",
+    description:
+      "Hiring Cybersecurity Analysts to strengthen enterprise security.",
+    requirements: [
+      "3+ years of experience in cybersecurity.",
+      "Expertise in network security and encryption.",
+      "Experience with SIEM tools and threat intelligence.",
+      "Knowledge of compliance frameworks like ISO 27001.",
+      "Strong incident response and forensics skills.",
+    ],
   },
   {
     id: 10,
@@ -94,6 +172,15 @@ const jobListings = [
     location: "Hyderabad, India",
     salary: "₹7,50,000 /yr",
     applyLink: "",
+    description:
+      "Looking for fresh graduates with strong data analysis skills.",
+    requirements: [
+      "Proficiency in Python, R, or SQL.",
+      "Understanding of machine learning algorithms.",
+      "Experience with data visualization tools.",
+      "Ability to work with large datasets.",
+      "Good problem-solving and analytical skills.",
+    ],
   },
   {
     id: 11,
@@ -103,24 +190,15 @@ const jobListings = [
     location: "Pune, India",
     salary: "₹17,00,000 /yr",
     applyLink: "",
-  },
-  {
-    id: 12,
-    title: "Marketing Intern",
-    company: "Meta",
-    type: "Internship",
-    location: "Remote",
-    salary: "₹18,000 /month",
-    applyLink: "",
-  },
-  {
-    id: 13,
-    title: "React JS Intern",
-    company: "Infosys",
-    location: "Pune, India",
-    salary: "₹20,000/month",
-    type: "Internship",
-    applyLink: "",
+    description:
+      "Seeking Cloud Engineers to work on enterprise cloud solutions.",
+    requirements: [
+      "Experience with AWS, Azure, or Google Cloud.",
+      "Strong knowledge of Kubernetes and Docker.",
+      "Familiarity with cloud security practices.",
+      "Experience in infrastructure automation.",
+      "Good understanding of networking protocols.",
+    ],
   },
 ];
 
