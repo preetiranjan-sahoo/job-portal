@@ -9,6 +9,8 @@ const Home = lazy(() => import("./components/Home"));
 const Jobs = lazy(() => import("./components/Jobs"));
 const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
+const Login = lazy(() => import("./components/Login"));
+const Register = lazy(() => import("./components/Register"));
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
           <Footer />
         </Suspense>

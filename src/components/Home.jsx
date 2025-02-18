@@ -100,7 +100,7 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
         >
-          We help <span>{count}</span>+ students get their dream job
+          We help <span>{count}</span>+ students to get their dream job
         </motion.h2>
       </div>
 
